@@ -1,0 +1,7 @@
+*.img
+git.info
+*~
+*.sw[p-s]
+*.out
+*.txt
+
