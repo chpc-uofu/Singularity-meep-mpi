@@ -90,6 +90,11 @@ fi
 . /etc/profile.d/91-chpc.sh
 " >> /etc/bash.bashrc
 
+    echo "
+#!/bin/bash
+export LD_LIBRARY_PATH=\"/uufs/chpc.utah.edu/sys/installdir/mvapich2/2.2-c7/lib:\$LD_LIBRARY_PATH\"
+meep-mpich2 $@
+" >> /usr/bin/run_meep_mvapich2.sh
     # meep
     apt-get install -y meep meep-mpich2 h5utils
 %test
