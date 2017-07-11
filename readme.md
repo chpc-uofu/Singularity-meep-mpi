@@ -1,4 +1,4 @@
-#Ubuntu container MEEP-MPI
+# Ubuntu container MEEP-MPI
 
 Includes InfiniBand stack for IB support
 
@@ -8,14 +8,14 @@ IMPI does not work since meep-mpi complains that IMPI lacks BLCR kernel module
 
 MVAPICH2, on the other hand, works OK.
 
-##To test:
+## To test:
 ```
 cd examples
 ml gcc mvapich2 singularity/2.3.1
 mpirun -np 2 singularity exec /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/ubuntu_meep.img meep-mpich2 holey-wvg-bands.ctl
 ```
 
-##Performance problem
+## Performance problem
 - mpich 3.2 packaged with Ubuntu 16.10 is only built with TCP. As the executable is using dynamic libraries from the container, it by default uses libmpich.so from `/usr/lib/x86_64-linux-gnu`, and thus does not run over the IB.
 - we need to overload this `libmpich.so` with that from the CHPC - in `/uufs/chpc.utah.edu/sys/installdir/mpich/3.2-c7/lib` - also had to `ln -s libmpi.so.12.1.0 libmpich.so.12` as `libmpich.so.12` link is not made in the build from the source.
 - so, run through a script like:
@@ -37,7 +37,7 @@ and, on the host
 mpirun -np 2 singularity exec /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/ubuntu_meep.img /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/examples/run_meep_mvapich.sh holey-wvg-bands.ctl
 ```
 
-##Performance
+## Performance
 
 Container performance not as good as the `meep-mpich2` is built with gcc and underlying open source stack (OpenBLAS,...)
 
