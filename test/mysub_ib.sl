@@ -24,8 +24,7 @@ export MEEP_SCRIPT=/uufs/chpc.utah.edu/common/home/u0101881/containers/singulari
 
 # Load Meep
 module load gcc/4.8.5
-module load mpich/3.2.g
-module load meep/1.3
+module load mvapich2/2.2.g
 
 # Job properly
 echo " ********************************* "

@@ -21,10 +21,9 @@ export GUILE_WARN_DEPRECATED="no"
 export MEEP_CONTAINER=/uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/ubuntu_meep_good.img
 export MEEP_SCRIPT=meep-mpich2
 
-# Load Meep
+# Load MPICH
 module load gcc/4.8.5
 module load mpich/3.2.g
-module load meep/1.3
 
 # Job properly
 echo " ********************************* "
