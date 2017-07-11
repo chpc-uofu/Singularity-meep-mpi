@@ -43,16 +43,16 @@ Container performance not as good as the `meep-mpich2` is built with gcc and und
 
 For example, on the holey-wvg-bands.ctl example, 2procs (over IB)
 
-|MVAPICH2 host         |36.3216|
-|IMPI host             |21.1274|
-|MVAPICH2 container    |55.0033|
-|MPICH2 container      |63.9363|
-|MPICH2 container TCP  |270.671|
+| MVAPICH2 host         | 36.3216 |
+| IMPI host             | 21.1274 |
+| MVAPICH2 container    | 55.0033 |
+| MPICH2 container      | 63.9363 |
+| MPICH2 container TCP  | 270.671 |
 
 Another example, polarizer.ctl, 6x28 core nodes
 
-|MPICH TCP, host      |499.017|
-|MPICH IB, host       |segfault|
-|MPICH container IB   |275.962|
-|MPICH container TCP  |687.565|
+| MPICH TCP, host      | 499.017 |
+| MPICH IB, host       | segfault |
+| MPICH container IB   | 275.962 |
+| MPICH container TCP  | 687.565 |
        
