@@ -34,7 +34,7 @@ meep-mpich2 $@
 ```
 and, on the host
 ```
-mpirun -np 2 singularity exec /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/ubuntu_meep.img /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/examples/run_meep_mvapich.sh holey-wvg-bands.ctl
+mpirun -np 2 singularity exec /uufs/chpc.utah.edu/common/home/u0101881/containers/singularity/containers/chpc/Singularity-meep-mpi/ubuntu_meep.img run_meep_mvapich.sh holey-wvg-bands.ctl
 ```
 
 ## Performance
